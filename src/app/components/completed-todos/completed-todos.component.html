@@ -1,0 +1,12 @@
+<ul class="list-group mt-4" *ngIf="todosArrObs$ | async as todosArr; else noTodos">
+    <li class="list-group-item" *ngFor="let todo of todosArr; trackBy : trackById">
+        {{todo.title}}
+        <strong>
+            {{todo.completed}}
+        </strong>
+    </li>
+</ul>
+
+<ng-template #noTodos>
+    <p class="alert alert-warning">No Todos !!!</p>
+</ng-template>
